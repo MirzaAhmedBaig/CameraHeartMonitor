@@ -23,6 +23,14 @@ android {
         }
     }
 
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -35,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.github.kibotu:Heart-Rate-Ometer:-SNAPSHOT'
-    implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
-    implementation ('com.github.kibotu:KalmanRx:1.2.1') { transitive = true }
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
+    implementation('com.github.kibotu:KalmanRx:1.2.1') { transitive = true }
+    implementation project(path: ':heartrateometer')
 }
